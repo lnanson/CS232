@@ -36,6 +36,23 @@ public class Image {
 		}
 	}
 	
+	public Image(String str) {
+		int x = str.length();
+		double w = Math.sqrt((double)x);
+		width = (int)w;
+		height = (int)w;
+		int y = 0;
+
+		pixel = new int[height][width];
+		for (int i=0; i< height; i++){
+			for (int j=0; j<width; j++) {
+				pixel[i][j] = Math.abs(Character.getNumericValue(str.charAt(y)))*100%255;
+				System.out.println(pixel[i][j]);
+				y=y+1;
+			}
+		}
+	}
+	
 	public int getWidth() {
 		return width;
 	}
@@ -53,8 +70,8 @@ public class Image {
 	public void shrink() { 
 		int x=0;
 		int[][] smallImage = new int[height/2][width/2];
-		for (int i=0; i<height/2; i=i+2) {
-			for (int j=0; j<width/2; j=j+2) {
+		for (int i=0; i<height/2; i++) {
+			for (int j=0; j<width/2; j++) {
 				x = (pixel[i*2][j*2]+pixel[i*2+1][j*2+1]+pixel[i*2][j*2+1]+pixel[i*2+1][j*2])/4;
 				smallImage[i][j]= x;
 			}
@@ -158,4 +175,6 @@ public class Image {
 			}
 		}
 	}
+	
+
 }
