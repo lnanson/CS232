@@ -80,14 +80,14 @@ public class Image {
 		int y=this.getHeight();
 		int x=this.getWidth();
 		int[][] mirrored = new int[y][x];
-		if (axis == Axis.VERTICAL) {
+		if (axis == Axis.HORIZONTAL) {
 			for (int i=0; i<y; i++) {
 				for (int j=0; j<x; j++) {
 					mirrored[y-i-1][j] = pixel[i][j];
 				}
 			}
 		}
-		if (axis == Axis.HORIZONTAL) {
+		if (axis == Axis.VERTICAL) {
 			for (int i=0; i<y; i++) {
 				for (int j=0; j<x; j++) {
 					mirrored[i][x-j-1] = pixel[i][j];
@@ -152,7 +152,7 @@ public class Image {
 				if (pixel[i][j] <= 85) {
 						pixel[i][j] = pixel[i][j]+5;
 				}
-				if (pixel[i][j] >= 171 {
+				if (pixel[i][j] >= 171) {
 						pixel[i][j] = pixel[i][j]-5;	
 				}
 			}
