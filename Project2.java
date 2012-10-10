@@ -31,11 +31,11 @@ public class Project2 extends JFrame implements ChangeListener, ActionListener {
 
 		// button panel setup
 		JPanel buttonPanel = new JPanel();
-		buttonPanel.setLayout(new GridLayout(5,2));
+		buttonPanel.setLayout(new GridLayout(9,1));
 		String[] labels = {"Invert", "Shrink", "Horizontal Axis Flip", "Vertical Axis Flip", "Increase Contrast", "Decrease Contrast", "Brighter", "Darker",  "Save Ascii"};
-		String[] help = {"get the negative", "flips about a horizontal axis", "flips about a vertical axis",
+		String[] help = {"get the negative", "all pixels get darker by 5", "flips about a horizontal axis", "flips about a vertical axis",
 						"darkest third gets darker, lightest third gets lighter", "darkest third gets lighter, lightest third gets darker", 
-						"all pixels get lighter by 5", "all pixels get darker by 5", "shrinks image in half, cannot be undone","saves the ascii to the file ascii.jpg in the local directory"};
+						"all pixels get lighter by 5",  "shrinks image in half, cannot be undone","saves the ascii to the file ascii.jpg in the local directory"};
 		button = new JButton[9];
 		for (int i=0; i< button.length; i++) {
 			button[i] = new JButton(labels[i]); 
@@ -141,7 +141,7 @@ public class Project2 extends JFrame implements ChangeListener, ActionListener {
 			}
 		}
 
-		Project2 window = new Project2a(image);
+		Project2 window = new Project2(image);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.pack();
 		window.setLocationRelativeTo(null);
